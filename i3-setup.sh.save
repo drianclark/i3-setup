@@ -1,0 +1,23 @@
+#!/bin/bash
+# Configures an i3 system to my personal taste
+# Created by Adrian David (December 2020)
+
+# Prerequisites:
+# Before running this, install i3:
+#	`sudo apt install i3`
+
+# install font
+
+# copy script for moving containers to previous and next workspaces
+cp ./i3MoveNext.sh ~/.config/i3
+chmod +x ~/.config/i3/i3MoveNext.sh
+apt install jq # script uses jq
+
+# feh for wallpaper handling
+apt install feh
+
+# replace the existing default i3 config
+cp ./config ~/.config/i3
+
+
+
