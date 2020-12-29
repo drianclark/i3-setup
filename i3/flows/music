@@ -1,0 +1,3 @@
+#!/bin/bash
+
+i3-msg "workspace music; append_layout ~/.config/i3/layouts/music.json; exec google-chrome  'https://open.spotify.com' --new-window; exec gnome-terminal -- cava; exec google-chrome --new-window"

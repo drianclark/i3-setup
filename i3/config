@@ -11,6 +11,9 @@
 
 set $mod Mod1
 
+# wallpaper
+set $WALLPAPER ~/.config/i3/daniel-sessler-p_3j4nZpZw4-unsplash.jpg
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:SFNS Display Regular 10, Font Awesome 10, Material-Design-Iconic-Font Design-Iconic-Font 10
@@ -21,6 +24,7 @@ font pango:SFNS Display Regular 10, Font Awesome 10, Material-Design-Iconic-Font
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+bindsym Mod4+l exec ~/.config/i3/betterlockscreen -l dimblur  
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -169,7 +173,6 @@ hide_edge_borders both
 new_window 1pixel
 
 # setting the wallpaper
-set $WALLPAPER ~/.config/i3/daniel-sessler-p_3j4nZpZw4-unsplash.jpg
 exec_always feh --bg-scale $WALLPAPER
 
 # compton for transparency
@@ -193,12 +196,11 @@ set $urgent-bg-color     #E53935
 #client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 # ulauncher
-bindsym Ctrl+Shift+space exec ulauncher
+bindsym Ctrl+Shift+space exec rofi -show run
 
 # screenshot
 bindsym Print exec gnome-screenshot
 for_window [instance="gnome-screenshot"] floating enable
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
@@ -209,7 +211,6 @@ for_window [instance="gnome-screenshot"] floating enable
 #	font pango: Liberation Sans 11 
 #	tray_output none
 #	i3bar_command i3bar -t
- #       status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#       status_command i3blocks -c ~/.config/i3/i3blocks.conf
 #	position top
 #}
-

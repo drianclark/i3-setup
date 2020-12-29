@@ -1,0 +1,85 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1038,
+       "width": 1902,
+       "x": 38,
+       "y": 62
+    },
+    "name": "Spotify",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^Google\\-chrome$",
+       "instance": "^google\\-chrome$",
+       "title": "^.*Spotify.*$",
+	"window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 0,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 420,
+                       "width": 571,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "cava",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       "class": "^Gnome\\-terminal$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1038,
+               "width": 1902,
+               "x": 48,
+               "y": 72
+            },
+            "name": "New Tab – Unsplash Instant - Google Chrome",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Google\\-chrome$",
+               "instance": "^google\\-chrome$",
+               "title": "^New\\ Tab\\ \\–\\ Unsplash\\ Instant\\ \\-\\ Google\\ Chrome$",
+               "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}

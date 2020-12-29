@@ -33,6 +33,7 @@ chmod +x ~/.config/i3/i3MoveNext.sh
 apt install jq # script uses jq
 
 # replace i3 config
+mkdir -p $I3_DIR
 cp -rT ./i3 $I3_DIR
 
 # install polybar
@@ -62,5 +63,19 @@ chmod +x ./i3lock-color-master/install-i3lock-color.sh
 
 sudo apt install imagemagick
 
-cp ./betterlockscreen/betterlockscreen $I3_DIR
 chmod u+x ~/.config/i3/betterlockscreen
+
+# install and configure rofi
+sudo apt install rofi
+mkdir -p ~/.config/rofi
+cp -r ./rofi ~/.config/rofi
+
+# install cava and dependencies
+apt-get install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool automake libiniparser-dev
+export CPPFLAGS=-I/usr/include/iniparser
+
+./cava/autogen.sh
+./cava/configure
+(cd ./cava && make install)
+
+# create scri
