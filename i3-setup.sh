@@ -6,12 +6,13 @@
 # Before running this, install i3-gaps:
 #	`sudo apt install i3-gaps`
 
-I3DIRECTORY=~/.config/i3
+I3_DIR=~/.config/i3
 POLYBAR_DIR=~/.config/polybar
 
 # install fonts
 mkdir -p ~/.fonts
 cp -a ./fonts/. ~/.fonts
+fc-cache -fv
 
 # install adapta theme
 apt-add-repository ppa:tista/adapta
@@ -32,7 +33,7 @@ chmod +x ~/.config/i3/i3MoveNext.sh
 apt install jq # script uses jq
 
 # replace i3 config
-cp -rT ./i3 $I3DIRECTORY
+cp -rT ./i3 $I3_DIR
 
 # install polybar
 apt install polybar
@@ -46,6 +47,20 @@ cp -rT ./polybar $POLYBAR_DIR
 
 # install compton
 apt install compton
+
+# add compton config
 cp ./compton.conf ~/.config
 
+# install betterlockscreen and dependencies
+sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
 
+chmod +x ./i3lock-color-master/build.sh
+./i3lock-color-master/build.sh
+
+chmod +x ./i3lock-color-master/install-i3lock-color.sh
+./i3lock-color-master/install-i3lock-color.sh
+
+sudo apt install imagemagick
+
+cp ./betterlockscreen/betterlockscreen $I3_DIR
+chmod u+x ~/.config/i3/betterlockscreen
