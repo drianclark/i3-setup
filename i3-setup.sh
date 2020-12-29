@@ -78,4 +78,6 @@ export CPPFLAGS=-I/usr/include/iniparser
 ./cava/configure
 (cd ./cava && make install)
 
-# create scri
+cp ./cava.config ~/.config/cava/config
+
+# create flows scripts and add to profile (for rofi detection)
