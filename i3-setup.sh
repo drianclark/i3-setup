@@ -37,6 +37,10 @@ cp -rT ./i3 $I3DIRECTORY
 # install polybar
 apt install polybar
 
+# installing player-mpris-tail dependencies (polybar media module)
+python3 -m pip install dbus-python
+apt install python-gobject
+
 # replace the existing default polybar config
 cp -rT ./polybar $POLYBAR_DIR
 
