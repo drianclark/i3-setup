@@ -7,6 +7,7 @@
 #	`sudo apt install i3-gaps`
 
 I3DIRECTORY=~/.config/i3
+POLYBAR_DIR=~/.config/polybar
 
 # install fonts
 mkdir -p ~/.fonts
@@ -25,27 +26,22 @@ GTK3_CONFIG=~/.config/gtk-3.0/settings.ini
 ./replaceSetting GTK3_CONFIG gtk-xft-hinting 1
 ./replaceSetting GTK3_CONFIG gtk-xft-hintstyle hintfull
 
-# load gnome-terminal transparent profile
-dconf load /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ < transparent.dconf
-
 # copy script for moving containers to previous and next workspaces
-cp ./i3MoveNext.sh $I3DIRECTORY
+cp ./i3MoveNext.sh $I3_DIR
 chmod +x ~/.config/i3/i3MoveNext.sh
 apt install jq # script uses jq
 
-# copying the script for generating ordinal date
-cp ./ordinalDate.sh $I3DIRECTORY
+# replace i3 config
+cp -rT ./i3 $I3DIRECTORY
 
-# install i3blocks
-apt install i3blocks
+# install polybar
+apt install polybar
 
-# replace the existing default i3blocks config
-cp /etc/i3blocks.conf $I3DIRECTORY
+# replace the existing default polybar config
+cp -rT ./polybar $POLYBAR_DIR
 
-# copy the volume script to the i3 directory (i3blocks config calls it from there)
-cp /usr/share/i3blocks/volume $I3DIRECTORY
-
-# replace the existing default i3 config
-cp ./config $I3DIRECTORY
+# install compton
+apt install compton
+cp ./compton.conf ~/.config
 
 
