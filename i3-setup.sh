@@ -85,3 +85,7 @@ echo '# adding i3 flow scripts' >> ~/.profile
 echo 'if [ -d "$HOME/.config/i3/flows" ]; then' >> ~/.profile
 echo '    PATH="$HOME/.config/i3/flows:$PATH"' >> ~/.profile
 echo 'fi'
+
+# hide gnome-terminal menu bar by default
+gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
+gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
