@@ -80,4 +80,8 @@ export CPPFLAGS=-I/usr/include/iniparser
 
 cp ./cava.config ~/.config/cava/config
 
-# create flows scripts and add to profile (for rofi detection)
+# add flows scripts to .profile (for rofi to detect)
+echo '# adding i3 flow scripts' >> ~/.profile
+echo 'if [ -d "$HOME/.config/i3/flows" ]; then' >> ~/.profile
+echo '    PATH="$HOME/.config/i3/flows:$PATH"' >> ~/.profile
+echo 'fi'
