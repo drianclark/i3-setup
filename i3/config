@@ -105,6 +105,7 @@ set $code "code"
 set $term "term"
 set $music "music"
 set $comms "comms"
+set $misc "misc"
 
 # switch to workspace
 bindsym $mod+1 workspace $code
