@@ -96,3 +96,6 @@ FONT='Roboto Mono Regular 10'
 gsettings get "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE/" cursor-shape 'ibeam'
 
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE/" font '"$FONT"'
+
+# allowing execute for all automation scripts
+chmod -R +x ~/.config/i3/flows
