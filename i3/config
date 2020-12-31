@@ -104,19 +104,21 @@ bindsym $mod+a focus parent
 set $code "code"
 set $term "term"
 set $music "music"
-set $mail "mail"
-set $web "web"
+set $comms "comms"
 
 # switch to workspace
 bindsym $mod+1 workspace $code
 bindsym $mod+2 workspace $term
 bindsym $mod+3 workspace $music
-bindsym $mod+4 workspace $mail
+bindsym $mod+4 workspace $comms
+bindsym $mod+grave workspace $misc
 
 bindsym $mod+Shift+Ctrl+1 move to workspace $code
 bindsym $mod+Shift+Ctrl+2 move to workspace $term
 bindsym $mod+Shift+Ctrl+3 move to workspace $music
-bindsym $mod+Shift+Ctrl+4 move to workspace $mail
+bindsym $mod+Shift+Ctrl+4 move to workspace $comms
+bindsym $mod+Shift+Ctrl+grave move to workspace $misc
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
