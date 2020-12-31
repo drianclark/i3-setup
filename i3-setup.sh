@@ -87,5 +87,11 @@ echo '    PATH="$HOME/.config/i3/flows:$PATH"' >> ~/.profile
 echo 'fi'
 
 # hide gnome-terminal menu bar by default
-gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
-gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
+
+
+# set terminal font
+PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
+FONT='Roboto Mono Regular 10'
+gsettings get "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE/" cursor-shape 'ibeam'
+
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE/" font '"$FONT"'
