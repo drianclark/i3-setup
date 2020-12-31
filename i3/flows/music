@@ -1,3 +1,8 @@
 #!/bin/bash
 
-i3-msg "workspace music; append_layout ~/.config/i3/layouts/music.json; exec google-chrome  'https://open.spotify.com' --new-window; exec gnome-terminal -- cava; exec google-chrome --new-window"
+i3-msg "workspace music" && 
+i3-msg "append_layout ~/.config/i3/layouts/music.json" &&
+i3-msg "exec --no-startup-id gnome-terminal -- cava" && 
+sleep 0.5 &&
+i3-msg "exec --no-startup-id gnome-terminal -- ~/.config/i3/flows/weather-tube-status.py" &&
+i3-msg "exec google-chrome 'https://open.spotify.com' --new-window"
