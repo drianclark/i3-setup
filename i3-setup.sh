@@ -9,6 +9,10 @@
 I3_DIR=~/.config/i3
 POLYBAR_DIR=~/.config/polybar
 
+# install script dependencies
+apt install jq # i3MoveNext script uses jq
+chmod +x ~/.config/i3/i3MoveNext.sh
+
 # install fonts
 mkdir -p ~/.fonts
 cp -a ./fonts/. ~/.fonts
@@ -19,6 +23,7 @@ apt-add-repository ppa:tista/adapta
 apt-get install adapta-gtk-theme
 
 GTK3_CONFIG=~/.config/gtk-3.0/settings.ini
+chmod +x ./replaceSetting
 # configure gtk (replacing key value pairs in config file)
 # note that there may be more versions of GTK installed 
 ./replaceSetting GTK3_CONFIG gtk-theme-name Adapta-LightBlue-Adapta-LightBlue-Nokto-Eta
@@ -26,11 +31,6 @@ GTK3_CONFIG=~/.config/gtk-3.0/settings.ini
 ./replaceSetting GTK3_CONFIG gtk-xft-antialias 1
 ./replaceSetting GTK3_CONFIG gtk-xft-hinting 1
 ./replaceSetting GTK3_CONFIG gtk-xft-hintstyle hintfull
-
-# copy script for moving containers to previous and next workspaces
-cp ./i3MoveNext.sh $I3_DIR
-chmod +x ~/.config/i3/i3MoveNext.sh
-apt install jq # script uses jq
 
 # replace i3 config
 mkdir -p $I3_DIR
@@ -68,7 +68,7 @@ chmod u+x ~/.config/i3/betterlockscreen
 # install and configure rofi
 sudo apt install rofi
 mkdir -p ~/.config/rofi
-cp -r ./rofi ~/.config/rofi
+cp -rT ./rofi ~/.config/rofi
 
 # install cava and dependencies
 apt-get install libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool automake libiniparser-dev
@@ -87,7 +87,8 @@ echo '    PATH="$HOME/.config/i3/flows:$PATH"' >> ~/.profile
 echo 'fi'
 
 # hide gnome-terminal menu bar by default
-
+gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
+gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
 
 # set terminal font
 PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
