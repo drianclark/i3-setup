@@ -1,0 +1,39 @@
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1028,
+       "width": 404,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Standup gedit doc",
+    "percent": 0.3,
+    "swallows": [
+       {
+         "class": "^Gnome\\-terminal$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1028,
+       "width": 1902,
+       "x": 9,
+       "y": 43
+    },
+    "name": "Microsoft Teams",
+    "percent": 0.7,
+    "swallows": [
+       {
+          "class": ".*[T|t]eams.*"
+       }
+    ],
+    "type": "con"
+}

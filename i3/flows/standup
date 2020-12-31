@@ -1,0 +1,12 @@
+#!/bin/bash
+
+i3-msg "workspace standup" && 
+i3-msg "append_layout ~/.config/i3/layouts/standup.json" &&
+i3-msg "exec --no-startup-id /usr/bin/teams"
+
+if [ ! -f ~/standup.txt ]; then
+    notify-send "Please create standup.txt in your home directory"
+    exit
+fi
+
+i3-msg "exec --no-startup-id gnome-terminal -e 'nano ~/standup.txt'" 
