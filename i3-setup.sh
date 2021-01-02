@@ -65,6 +65,9 @@ sudo apt install imagemagick
 
 chmod u+x ~/.config/i3/betterlockscreen
 
+# install xautolock to autolock after some inactivity
+sudo apt install xautolock
+
 # install and configure rofi
 sudo apt install rofi
 mkdir -p ~/.config/rofi
