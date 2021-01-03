@@ -21,7 +21,7 @@ font-0 = LiberationSans-Regular:size=10;2
 font-1 = FontAwesome-Regular:size=10;2
 
 modules-left = powermenu player-mpris-tail
-modules-right = volume wireless-network date
+modules-right = volume wireless-network weather date
 modules-center = i3
 
 tray-position = none
@@ -111,6 +111,11 @@ ramp-signal-1 =
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
+
+[module/weather]
+type = custom/script
+exec = curl -s 'https://wttr.in?format="%C+%f"' | tr -d '+' | tr -d '"' 
+interval = 120
 
 [module/date]
 type = internal/date
